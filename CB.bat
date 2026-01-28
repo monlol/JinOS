@@ -9,7 +9,9 @@ set keywords=poki gamevui crazygames
 for %%a in (%keywords%) do (
     tasklist /v /fi "STATUS eq running" | findstr /i "%%a" >nul
     if not errorlevel 1 (
-        taskkill /f /im chrome.exe >nul 2>&1
+        taskkill /f /im zen.exe >nul 2>&1
+		taskkill /f /im chromium.exe >nul 2>&1
+        taskkill /f /im browser.exe >nul 2>&1
         taskkill /f /im msedge.exe >nul 2>&1
         taskkill /f /im firefox.exe >nul 2>&1
         taskkill /f /im brave.exe >nul 2>&1
