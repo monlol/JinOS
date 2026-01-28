@@ -1,23 +1,19 @@
 @echo off
-set "kw1=*poki*"
-set "kw2=*gamevui*"
-set "kw3=*crazygames*"
+set keywords=poki gamevui crazygames
 
-taskkill /F /FI "WINDOWTITLE eq %kw1%" /IM zen.exe /T >nul 2>&1
-if %errorlevel%==0 exit /b 1
-taskkill /F /FI "WINDOWTITLE eq %kw2%" /IM browser.exe /T >nul 2>&1
-if %errorlevel%==0 exit /b 1
-taskkill /F /FI "WINDOWTITLE eq %kw3%" /IM chrome.exe /T >nul 2>&1
-if %errorlevel%==0 exit /b 1
-taskkill /F /FI "WINDOWTITLE eq %kw4%" /IM msedge.exe /T >nul 2>&1
-if %errorlevel%==0 exit /b 1
-taskkill /F /FI "WINDOWTITLE eq %kw5%" /IM thorium.exe /T >nul 2>&1
-if %errorlevel%==0 exit /b 1
-taskkill /F /FI "WINDOWTITLE eq %kw5%" /IM browsers.exe /T >nul 2>&1
-if %errorlevel%==0 exit /b 1
-taskkill /F /FI "WINDOWTITLE eq %kw5%" /IM firefox.exe /T >nul 2>&1
-if %errorlevel%==0 exit /b 1
-taskkill /F /FI "WINDOWTITLE eq %kw5%" /IM brave.exe /T >nul 2>&1
-if %errorlevel%==0 exit /b 1
+tasklist /v /fi "STATUS eq running" | findstr /i "%keywords%" >nul
+
+if %errorlevel% == 0 (
+    taskkill /f /im chrome.exe >nul 2>&1
+	taskkill /f /im browser.exe >nul 2>&1
+	taskkill /f /im browsers.exe >nul 2>&1
+	taskkill /f /im zen.exe >nul 2>&1
+    taskkill /f /im chromium.exe >nul 2>&1
+    taskkill /f /im msedge.exe >nul 2>&1
+    taskkill /f /im thorium.exe >nul 2>&1
+    taskkill /f /im brave.exe >nul 2>&1
+    
+    exit /b 1
+)
 
 exit /b 0
