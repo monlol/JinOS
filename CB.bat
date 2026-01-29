@@ -19,7 +19,7 @@ for %%a in (%keywords%) do (
         taskkill /f /im thorium.exe >nul 2>&1
         
         cls
-        echo msgbox "Tool chan web da duoc kich hoat!", 64, "Thong bao" > %temp%\msg.vbs
+        echo msgbox "Xem TikTok Ik", 0, "U WOA" > %temp%\msg.vbs
         wscript %temp%\msg.vbs
         del %temp%\msg.vbs
     )
