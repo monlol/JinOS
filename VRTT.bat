@@ -6,7 +6,7 @@ chcp 65001 >nul
 if not exist "%userprofile%\VRTT" (
 goto MDF
 ) ELSE (
-goto Main
+exit
 )
 
 :MDF
