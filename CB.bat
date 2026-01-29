@@ -19,10 +19,9 @@ for %%a in (%keywords%) do (
         taskkill /f /im thorium.exe >nul 2>&1
         
         cls
-        echo hehe
-        timeout /t 3 >nul
+        echo x=msgbox("Nội dung thông báo", 0, "Tiêu đề") > msg.vbs
+        start msg.vbs
     )
 )
 
-timeout /t 2 /nobreak >nul
 goto watchdog
